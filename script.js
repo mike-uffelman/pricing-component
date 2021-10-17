@@ -16,4 +16,4 @@ priceThumb.oninput = () => {
     console.log('inputting...')
 }
 
-console.log(priceThumb.ondragleave)
+console.log(priceThumb.ondragleave) 
