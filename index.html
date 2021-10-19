@@ -28,14 +28,20 @@
 		</section>
 
 		<section class="card">
-			<h4 class="card__header">100k Pageviews</h4>
+			<h4 class="card__header--pageviews"></h4>
 
 			<form action="#" class="form">
 				<div class="card__inputs--slider-box">
-					<input type="range" id='slider' value='0' step='1' min='4' max='32' class='card__inputs--slider' >
-
-					<div class="input__range--track">
-					<div class="input__range--thumb"></div>
+					<input type="range" id='slider' value='2' min='0' max='4' step='1' class='card__inputs--slider' list='pageviews' >
+					<datalist id='pageviews' >
+						<option id='option' value="8" label='10K pageviews'></option>
+						<option value="12" label='50K pageviews'></option>
+						<option value="16" label='100K pageviews'></option>
+						<option value="24" label='500K pageviews'></option>
+						<option value="36" label='1M pageviews'></option>
+					</datalist>
+					<!-- <div class="input__range--track">
+					<div class="input__range--thumb"></div> -->
 
 					</div>
 
@@ -43,11 +49,15 @@
 				</div>
 				
 				<div class="card__inputs--billing">
-					<label for="billing" class="billing__label">Monthly Billing 
+					<p class="billing__timing">Monthly Billing</p>
+					<label for="billing" class="billing__label"> 
 						<input type='checkbox' id='billing' class='billing__checkbox'>
-					Yearly Billing
+						<span class="switch__box">
+						</span>
+						
+					
 					</label>
-	
+					<p class="billing__timing">Yearly Billing</p>
 					<p class="discount">-25%</p>
 				</div>
 				
