@@ -130,7 +130,7 @@ main {
     align-items: center;
     width: 100%;
 }
-
+ 
 .card__header--pageviews {
     text-transform: uppercase;
     letter-spacing: .25rem;
