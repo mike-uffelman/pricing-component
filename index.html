@@ -27,11 +27,13 @@
 
 		</section>
 
-		<section class="card">
-			<h4 class="card__header--pageviews"></h4>
-
+		<section class="pricing-card">
 			<form action="#" class="form">
-				<div class="card__inputs--slider-box">
+
+				<h4 class="card__header--pageviews"></h4>
+
+			
+				<div class="card__inputs--box">
 					<input type="range" id='slider' value='2' min='0' max='4' step='1' class='card__inputs--slider' list='pageviews' >
 					<datalist id='pageviews' >
 						<option id='option' value="8" label='10K pageviews'></option>
@@ -43,30 +45,34 @@
 					<!-- <div class="input__range--track">
 					<div class="input__range--thumb"></div> -->
 
-					</div>
+				</div>
 
-					<label for="slider" class="price__slider" id='price-display'></label>
+				<label for="slider" class="price__display" id='price-display'>
+					<span id='price__display--amount' class="price__display--amount"></span>
+					/ month
+				</label>
 				</div>
 				
 				<div class="card__inputs--billing">
-					<p class="billing__timing">Monthly Billing</p>
+					<!-- <p class="billing__timing">Monthly Billing</p> -->
 					<label for="billing" class="billing__label"> 
+						<p class="billing__timing">Monthly Billing</p>
 						<input type='checkbox' id='billing' class='billing__checkbox'>
 						<span class="switch__box">
 						</span>
-						
+						<p class="billing__timing yearly">Yearly Billing</p>
 					
 					</label>
-					<p class="billing__timing">Yearly Billing</p>
-					<p class="discount">-25%</p>
+					<!-- <p class="billing__timing yearly">Yearly Billing</p> -->
+					<!-- <p class="discount">-25%</p> -->
 				</div>
 				
 				<div class="features">
 					<ul class='
 					features__list'>
-						<li class="features__list--item">Unlimited websites</li>
-						<li class="features__list--item">100% data ownership</li>
-						<li class="features__list--item">Email reports</li>
+						<li class="features__list--item"><span></span>Unlimited websites</li>
+						<li class="features__list--item"><span></span>100% data ownership</li>
+						<li class="features__list--item"><span></span>Email reports</li>
 
 					</ul>
 				

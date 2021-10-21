@@ -42,7 +42,7 @@ main {
     height: 100vh;
     width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 1;
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -52,22 +52,19 @@ main {
 
 .bg-accent {
     position: absolute;
-    z-index: 1;
-    top: 0;
+    z-index: 3;
+    top: -10%;
+    left: 0;
     background-image: url('images/bg-pattern.svg');
     /* background-color: var(--light-grayish-blue-bg); */
     background-repeat: no-repeat;
+    /* background-position: center left; */
     height: 100%;
     width: 100%;
-    /* clip-path: path('M 0 0 H 1440 V 500 H 250 V 500 H 240 V 500 M 240 500 C 0 500, 50 0 , 0 240'); */
 }
 
-/* C 240 240, 20 400, 0 250 */
 
-.bg-accent path {
-    fill: green;
-    stroke: blue;
-}
+
 
 .hero {
     display: flex;
@@ -77,14 +74,14 @@ main {
     z-index: 5;
     background-image: url('images/pattern-circles.svg');
     background-repeat: no-repeat;
-    background-position: center 10%;
-    height: 100%;
+    background-position: center 25%;
+    min-height: 50vh;
 
 }
 
 .hero__header {
-    font-size: 3rem;
-    margin-top: 9rem;
+    font-size: 2rem;
+    margin-top: 8rem;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -94,38 +91,65 @@ main {
 .hero__text {
     color: var(--grayish-blue-text);
     text-align: center;
-    margin-top: 1rem;
-
+    margin: 1rem 1rem;
+    align-self: center;
+    max-width: 20rem;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
 }
 
 
-.card {
-    position: absolute;
+
+
+.pricing-card {
+    position: relative;
     z-index: 10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: -25%;
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    /* display: flex; */
+    justify-self: center;
+    align-self: center;
     display: flex;
     flex-direction: column;
     background-color: var(--white);
-    box-shadow: 0 0 .5rem var(--light-grayish-blue-bg);
+    box-shadow: 0 0 3rem var(--light-grayish-blue-bg);
     border-radius: .5rem;
     padding: 3rem;
     min-width: 32rem;
+    margin: 5rem;
     /* justify-content: center; */
     /* align-items: center; */
 
 }
 
-.card__header {
-    text-transform: uppercase;
-}
-
-.card__inputs--slider-box {
+.form {
     display: flex;
     flex-direction: column;
-    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
+
+.card__header--pageviews {
+    text-transform: uppercase;
+    letter-spacing: .25rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+
+
+.card__inputs--box {
+    display: flex;
+    flex-direction: column;
+    
+    position: relative;
+    width: 100%;
+
+}
+
+
 
 
 
@@ -182,13 +206,11 @@ main {
 
 input[type=range] {
     -webkit-appearance: none;
-    width: 100%;
-    
     background: var(--light-grayish-blue-slider);
     border-radius: 10rem;
     height: .75rem;
     position: relative;
-    /* overflow: hidden; */
+    margin: 3rem 0;
 }
 
 input[type=range]::-webkit-slider-runnable-track { 
@@ -196,6 +218,7 @@ input[type=range]::-webkit-slider-runnable-track {
     /* background-color: var(--strong-cyan); */
     /* border-radius: 10rem; */
     height: .75rem;
+    width: 100%;
     position: relative;
     
 
@@ -266,7 +289,6 @@ input[type=range]::-moz-range-thumb {
     background-image: url('images/icon-slider.svg'), linear-gradient(to bottom, var(--strong-cyan), var(--strong-cyan));
     background-repeat: no-repeat;
     background-position: center center;
-    position: relative;
     z-index: 999;
     height: 3rem;
     width: 3rem;
@@ -327,8 +349,19 @@ input[type=range]::-ms-fill-lower {
     position: absolute;
 } */
 
+.price__display {
+    /* justify-self: center; */
+    display: flex;
+    align-items: center;
 
+}
 
+.price__display--amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--dark-blue-text-cta-bg);
+    padding-right: .5rem;
+}
 
 /* ========== billing checkbox ============ */
 
@@ -336,48 +369,100 @@ input[type=range]::-ms-fill-lower {
     position: relative;
     display: flex;
     flex-direction: row;
+    /* justify-content: space-evenly; */
+
+    right: .5rem; /** workaround to get switch centered */
+    margin-top: 3rem;
+}
+
+/* .card__inputs--billing::after {
+    content: '';
+    position: absolute;
+    top: 5.5rem;
+    left: 0;
     width: 100%;
-    font-size: 1.5rem;
+    height: 1px;
+    background-color: var(--light-grayish-blue-slider);
+} */
+
+.pricing-card::after {
+    content: '';
+    position: absolute;
+    top: 24rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--light-grayish-blue-slider);
 }
 
 .billing__label {
     display: flex;
+    flex-direction: row;
     font-size: 1.2rem;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    position: relative;
-    height: 2.5rem;
-    width: 5rem;
-
-
 }
+
+
 
 
 .billing__checkbox {
     display: none;
 }
 
+.billing__timing {
+    position: relative;
+}
 
+
+
+.billing__timing.yearly::after {
+    content:'-25%';
+    position: absolute;
+    /* z-index: 9999; */
+    top: 0;
+    right: -4rem;
+    color: var(--light-red);
+    background-color: var(--light-grayish-red);
+    height: 1.5rem;
+    width: 3.25rem;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 10rem;
+    padding: .2rem 0 0 .25rem;
+    text-align: center;
+    /* align-self: center; */
+}
+
+/* .billing__label {
+    justify-self: center;
+    position: relative;
+} */
 
 .switch__box {
-    position: absolute;
-    z-index: 10000;
+    /* justify-self: center; */
+    /* align-self: center; */
+    position: relative;
+    z-index: 1000;
     border-radius: 5rem;
     height: 2rem;
     width: 4rem;
+    margin: 0 1rem;
     background-color: var(--light-grayish-blue-bg);
     cursor: pointer;
+    /* justify-self: center; */
+    
     transition: all ease 300ms;
 }
 
 .switch__box::before {
     content: '';
     position: absolute;
-    z-index: 100001;
-    top: .25rem;
-    left: .25rem;
-    height: 1.5rem;
-    width: 1.5rem;
+    z-index: 100;
+    top: .375rem;
+    left: .375rem;
+    height: 1.25rem;
+    width: 1.25rem;
     border-radius: 50%;
     background-color: var(--white);
     transform: translateX(0);
@@ -405,9 +490,15 @@ input[type=range]::-ms-fill-lower {
     
 }
 
+.billing__checkbox:checked  + .switch__box:hover::before {
+    background-color: var(--white);
+    transition: all ease 300ms;
+}
+
 .discount {
     color: var(--light-red);
     background-color: var(--light-grayish-red);
+    font-size: 1.5rem;
 }
 
 .features {
@@ -416,41 +507,39 @@ input[type=range]::-ms-fill-lower {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 4rem;
     height: 100%;
 }
 
 
-
-.features::before {
-    content: '';
-    position: absolute;
-    top: -1rem;
-    left: -3rem;;
-    width: calc(100% + 6rem);
-    
-    height: 1px;
-    background-color: blue;
-}
-
 .features__list {
-    /* margin-top: 2rem; */
+    margin: 2rem;
     list-style: none;
 }
 
 .features__list--item {
     position: relative;
+    text-align: center;
     font-size: 1.2rem;
-    padding-left: 2rem;
+    /* padding-left: 2rem; */
 }
 
-.features__list--item::before {
+.features__list--item:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.features__list--item span {
+    content: url(images/icon-check.svg);
+    padding-right: 1rem;
+}
+
+/* .features__list--item::before {
     content: url(images/icon-check.svg);
     position: absolute;
     top: 0;
     left: 0;
 
-}
+} */
 
 
 
@@ -458,14 +547,14 @@ input[type=range]::-ms-fill-lower {
 
 .btn {
     background-color: var(--dark-blue-text-cta-bg);
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     border: none;
     border-radius: 3rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
     font-size: 1.2rem;
     font-weight: 600;
     justify-self: center;
-    color: var(--grayish-blue-text);
+    color: var(--pale-blue);
 }
 
 .btn:hover {
@@ -487,10 +576,69 @@ input[type=range]::-ms-fill-lower {
 
 
 
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 37.5em) {
+    .pricing-card {
+        min-width: 50rem;
+        padding: 5rem;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        
+        z-index: 5;
+        background-image: url('images/pattern-circles.svg');
+        background-repeat: no-repeat;
+        background-position: center 10%;
+        height: 100%;
+    
+    }
+    
+    .hero__header {
+        font-size: 2.5rem;
+    }
+    
+    .hero__text {
+        max-width: 100%;
+        
+    }
+
+    .card__header--pageviews {
+        align-self: flex-start;
+        justify-self: center;
+    }
+
+    .price__display {
+        /* justify-self: center; */
+        display: flex;
+        align-items: center;
+        order: -1;
+        align-self: flex-end;
+    
+    }
+
+    .billing__timing.yearly::after {
+        content:'-25% discount';
+
+        right: -10rem;
+        width: 8.5rem;
+    }
+
     .features {
+        width: 100%;
         flex-direction: row;
         justify-content: space-between;
+        
+    }
+
+    .features__list {
+        margin: 2rem 2rem 0 0;
+    }
+
+    .features__list--item {
+        /* justify-self: flex-start; */
+        text-align: left;
     }
 
     .btn {
