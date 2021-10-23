@@ -13,7 +13,6 @@ This is a solution to the [Interactive pricing component challenge on Frontend M
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -31,8 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [My solution](https://adoring-meitner-632781.netlify.app/)
 
 ## My process
 
@@ -56,11 +54,7 @@ One such problem revolved around styling of the input ranges, as a self imposed 
 
 An additional object for this project was to practice building responsive layouts using Flexbox and CSS Grid.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
 ### Continued development
-
-Going forward I'd like to continue to practice intentional
 
 ## Author
 
