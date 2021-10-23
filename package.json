@@ -1,0 +1,19 @@
+{
+  "name": "my-code2",
+  "version": "1.0.0",
+  "description": "This is a solution to the [Interactive pricing component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mike-uffelman/pricing-component.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mike-uffelman/pricing-component/issues"
+  },
+  "homepage": "https://github.com/mike-uffelman/pricing-component#readme"
+}
