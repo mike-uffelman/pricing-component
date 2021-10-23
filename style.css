@@ -1,4 +1,4 @@
-/* branch test comment, test branch edit */
+/* ------------- Base & Typography ------------- */
 
 :root {
     /* full slider bar */--soft-cyan: hsl(174, 77%, 80%); 
@@ -24,8 +24,10 @@
 /* set 1rem to 10px */
 html {
     font-size: 62.5%; 
-    max-width: 1440px;
 
+    /* center the page for vw > max-width */
+    max-width: 1440px;
+    margin: auto;
 } 
 
 
@@ -35,94 +37,98 @@ body {
     font-family: 'Manrope', sans-serif;
     color: var(--grayish-blue-text);
 
-
-
 }
 
 main {
     background-color: var(--very-pale-blue);
+    
     height: 100vh;
     width: 100%;
+    
     position: relative;
     z-index: 1;
-    font-size: 1.5rem;
-    display: flex;
-    flex-direction: column;
     
+    font-size: 1.5rem;
+    
+    display: flex;
+    flex-direction: column;    
 }
-
 
 .bg-accent {
     position: absolute;
     z-index: 3;
     top: -10%;
     left: 0;
+    
     background-image: url('images/bg-pattern.svg');
     /* background-color: var(--light-grayish-blue-bg); */
     background-repeat: no-repeat;
     /* background-position: center left; */
+    
     height: 100%;
     width: 100%;
 }
 
 
-
+/* ------------- heto ------------- */
 
 .hero {
     display: flex;
     flex-direction: column;
     position: relative;
-    
+
     z-index: 5;
+    min-height: 50vh;
+
     background-image: url('images/pattern-circles.svg');
     background-repeat: no-repeat;
     background-position: center 25%;
-    min-height: 50vh;
 
 }
 
-.hero__header {
-    font-size: 2rem;
-    margin-top: 8rem;
+.hero__header {    
     display: flex;
     flex-direction: column;
+
+    margin-top: 8rem;
+
+    font-size: 2rem;
     text-align: center;
     color: var(--dark-blue-text-cta-bg);
 }
 
 .hero__text {
     color: var(--grayish-blue-text);
-    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+
+    text-align: center;  
     margin: 1rem 1rem;
     align-self: center;
     max-width: 20rem;
-    font-size: 1.4rem;
-    line-height: 2.5rem;
 }
 
 
+/* ------------- pricing component ------------- */
 
-
-.pricing-card {
+.card {
     position: relative;
     z-index: 10;
     top: -25%;
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
-    /* display: flex; */
+
+    min-width: 32rem;
+
     justify-self: center;
     align-self: center;
+    
     display: flex;
     flex-direction: column;
+
     background-color: var(--white);
     box-shadow: 0 0 3rem var(--light-grayish-blue-bg);
     border-radius: .5rem;
     padding: 3rem;
-    min-width: 32rem;
     margin: 5rem;
-    /* justify-content: center; */
-    /* align-items: center; */
-
 }
 
 .form {
@@ -130,19 +136,21 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
     width: 100%;
 }
  
-.card__header--pageviews {
+.card--pageviews {
     text-transform: uppercase;
     letter-spacing: .25rem;
     font-size: 1.2rem;
     font-weight: 800;
 }
 
+/* ====== custom range slider stylings ======  */
 
 
-.card__inputs--box {
+.card__range--box {
     display: flex;
     flex-direction: column;
     
@@ -151,61 +159,8 @@ main {
 
 }
 
-
-
-
-
-
-/* ====== custom range slider stylings ====== */
-
-
-
-/* .input__range--track {
-    content:'';
-    position: absolute;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: .5rem;
-    background-color: var(--light-grayish-blue-slider);
-    border-radius: 10rem;
-} */
-
-/* .input__range--thumb {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: -1rem;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 10rem;
-    background-color: var(--strong-cyan);
-    box-shadow: 0 1rem 2rem var(--strong-cyan);
-    
-
-} */
-
-/* .input__range--thumb::before {
-    content: url('images/icon-slider.svg');
-    position: absolute;
-    top: calc(50% + .1rem);
-    left: 50%;
-    transform: translate(-50%, -50%) scale(.75);
-} */
-
-/* .input__range--thumb:hover {
-    cursor: pointer;
-}
-
-.input__range--thumb:active {
-    background-color: teal;
-} */
-
-
-
-/* ================================ */
-
+/* base input stylings for all browsers */
+/* pseudo elements for the range input have to use the input type selector */
 input[type=range] {
     -webkit-appearance: none;
     background: var(--light-grayish-blue-slider);
@@ -215,17 +170,16 @@ input[type=range] {
     margin: 3rem 0;
 }
 
+/* ------------- safari/chrome ------------- */
+/* safari/chrome slider track */
 input[type=range]::-webkit-slider-runnable-track { 
     -webkit-appearance: none;
-    /* background-color: var(--strong-cyan); */
-    /* border-radius: 10rem; */
     height: .75rem;
     width: 100%;
     position: relative;
-    
-
 }
 
+/* safari/chrome slider thumb */
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     position: relative;
@@ -236,18 +190,16 @@ input[type=range]::-webkit-slider-thumb {
     background-color: var(--strong-cyan);
     
     top: -2rem;
-    /* left: 0; */
     width: 3rem;
     height: 3rem;
     z-index: 1000;
     border-radius: 50%;
-    /* width: 100%; */
     box-shadow: 0 1rem 2.5rem var(--strong-cyan);
 }
 
+/* safari/chrome slider thumb hover */
 input[type=range]::-webkit-slider-thumb:hover {
-    /* -webkit-appearance: none; */
-    /* width: 100%; */
+
     background-image: url('images/icon-slider.svg'), linear-gradient(to bottom, teal, teal);
     background-repeat: no-repeat;
     background-position: center center;
@@ -255,39 +207,30 @@ input[type=range]::-webkit-slider-thumb:hover {
     cursor: grab;
 }
 
-input[type=range]::-webkit-slider-thumb-shadow {
-    background-color: var(--strong-cyan);
-}
-
+/* safari/chrome thumb active */
 input[type=range]::-webkit-slider-thumb:active {
     background-color: teal;
 }
+/* ----------------------------------- */
 
-input[type=range]::-webkit-progress-value {
-    background-color: var(--strong-cyan);
-}
 
-/* input[type=range] {
-    -webkit-appearance: none;
-    border: 3px solid white;
-    
-} */
-
+/* ------------- firefox ------------- */
+/* firefox range track */
 input[type=range]::-moz-range-track {
     -webkit-appearance: none;
     width: 100%;
-    /* height: 2rem; */
-    border: none;
     border-radius: 5px;
-    
 }
 
+input[type=range]::-moz-focus-outer {
+    border: 0;
+    outline: none;
+}
+
+/* firefox range thumb */
 input[type=range]::-moz-range-thumb {
     -webkit-appearance: none;
     border: none;
-    /* display: none; */
-    
-    /* content: url('images/icon-slider.svg'); */
     background-image: url('images/icon-slider.svg'), linear-gradient(to bottom, var(--strong-cyan), var(--strong-cyan));
     background-repeat: no-repeat;
     background-position: center center;
@@ -301,19 +244,7 @@ input[type=range]::-moz-range-thumb {
     transition: all ease 500ms;
 }
 
-
-
-/* input[type=range]::-moz-range-thumb::before {
-    -webkit-appearance: none;
-    content: url(images/icon-slider.svg);
-    position: absolute;
-    top: 0;
-    z-index: 1000;
-    left: 0;
-    height: 1rem;
-    width: 1rem;
-} */
-
+/* firefox range thumb hover */
 input[type=range]::-moz-range-thumb:hover {
     background-image: url('images/icon-slider.svg'), linear-gradient(to bottom, teal, teal);
     cursor: grab;
@@ -322,34 +253,25 @@ input[type=range]::-moz-range-thumb:hover {
 }
 
 
-
-input[type=range]::-moz-range-progress {
+/* firefox range progress; commented out b/c JS written to apply this styling*/ 
+/* input[type=range]::-moz-range-progress {
     background-color: var(--soft-cyan);
-}
+} */
 
+/* firefox keyboard accessibility */
 input[type=range]:-moz-focusring {
-    outline: 1px solid white;
+    outline: 1px solid var(--soft-cyan);
     outline-offset: -1px;
 }
+/* ------------------------------------- */
 
+/* ---------------- IE ----------------- */
+/* IE thumb range progress */
 input[type=range]::-ms-fill-lower {
     background-color: var(--strong-cyan);
 }
+/* --------------------------------------- */
 
-
-
-/* input[type='range']::-moz-range-track {
-    background-color: 
-} */
-
-
-/* .card__inputs--slider::-webkit-slider-thumb::before {
-    content: url('images/icon-slider.svg');
-    height: 2.5rem;
-    width: 2.5rem;
-
-    position: absolute;
-} */
 
 .price__display {
     /* justify-self: center; */
@@ -366,46 +288,37 @@ input[type=range]::-ms-fill-lower {
 }
 
 /* ========== billing checkbox ============ */
-
-.card__inputs--billing {
+.billing {
     position: relative;
+    
     display: flex;
     flex-direction: row;
-    /* justify-content: space-evenly; */
 
     right: .5rem; /** workaround to get switch centered */
     margin-top: 3rem;
 }
 
-/* .card__inputs--billing::after {
+.card::after {
     content: '';
-    position: absolute;
-    top: 5.5rem;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--light-grayish-blue-slider);
-} */
 
-.pricing-card::after {
-    content: '';
     position: absolute;
     top: 24rem;
     left: 0;
+    
     width: 100%;
     height: 1px;
+    
     background-color: var(--light-grayish-blue-slider);
 }
 
 .billing__label {
     display: flex;
     flex-direction: row;
-    font-size: 1.2rem;
     justify-content: center;
     align-items: center;
+
+    font-size: 1.2rem;
 }
-
-
 
 
 .billing__checkbox {
@@ -417,86 +330,100 @@ input[type=range]::-ms-fill-lower {
 }
 
 
-
+/* discount pseudo element */
 .billing__timing.yearly::after {
     content:'-25%';
+
     position: absolute;
-    /* z-index: 9999; */
     top: 0;
     right: -4rem;
+    
     color: var(--light-red);
     background-color: var(--light-grayish-red);
+    
     height: 1.5rem;
     width: 3.25rem;
+    
     font-size: 1rem;
     font-weight: 800;
     border-radius: 10rem;
     padding: .2rem 0 0 .25rem;
     text-align: center;
-    /* align-self: center; */
 }
 
-/* .billing__label {
-    justify-self: center;
-    position: relative;
-} */
 
-.switch__box {
-    /* justify-self: center; */
-    /* align-self: center; */
+.switch {
     position: relative;
     z-index: 1000;
-    border-radius: 5rem;
+   
     height: 2rem;
     width: 4rem;
     margin: 0 1rem;
-    background-color: var(--light-grayish-blue-bg);
-    cursor: pointer;
-    /* justify-self: center; */
+    border-radius: 5rem;
     
+    background-color: var(--light-grayish-blue-bg);
+   
     transition: all ease 300ms;
+
+    cursor: pointer;
+
 }
 
-.switch__box::before {
+.switch::before {
     content: '';
+
     position: absolute;
     z-index: 100;
     top: .375rem;
     left: .375rem;
+    
     height: 1.25rem;
     width: 1.25rem;
+    
     border-radius: 50%;
     background-color: var(--white);
+    
     transform: translateX(0);
     transition: all ease 300ms;
 }
 
-.switch__box:hover::before {
+.switch:hover::before {
     background-color: var(--soft-cyan);
 }
 
-.billing__checkbox:checked + .switch__box:hover::before {
+/* ---------- styling for hidden switch checkbox -------- */
+.billing__checkbox:checked + .switch:hover::before {
     background-color: var(--white);
     transition: all ease 300ms;
 }
 
-.billing__checkbox:checked + .switch__box {
+.billing__checkbox:checked + .switch {
     background-color: var(--soft-cyan);
     transition: all ease 300ms;
 }
 
-.billing__checkbox:checked  + .switch__box::before {
-    
+.billing__checkbox:checked  + .switch::before {
     transform: translateX(2rem);
     transition: all ease 300ms;
-    
 }
 
-.billing__checkbox:checked  + .switch__box:hover::before {
+.billing__checkbox:checked  + .switch:hover::before {
     background-color: var(--white);
     transition: all ease 300ms;
 }
 
+.billing__checkbox:checked + body {
+    color: var(--strong-cyan);
+}
+
+/* text styling for checked billing */
+.selected {
+    color: var(--strong-cyan);
+    transition: all ease 300ms;
+    /* text-shadow: 0 0 1px var(--soft-cyan); */
+}
+
+/* discount pseudo element styling */
 .discount {
     color: var(--light-red);
     background-color: var(--light-grayish-red);
@@ -505,25 +432,27 @@ input[type=range]::-ms-fill-lower {
 
 .features {
     position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    
     margin-top: 4rem;
     height: 100%;
 }
 
-
 .features__list {
     margin: 2rem;
+
     list-style: none;
 }
 
 .features__list--item {
     position: relative;
+
     text-align: center;
     font-size: 1.2rem;
-    /* padding-left: 2rem; */
 }
 
 .features__list--item:not(:last-child) {
@@ -535,13 +464,7 @@ input[type=range]::-ms-fill-lower {
     padding-right: 1rem;
 }
 
-/* .features__list--item::before {
-    content: url(images/icon-check.svg);
-    position: absolute;
-    top: 0;
-    left: 0;
 
-} */
 
 
 
@@ -565,7 +488,7 @@ input[type=range]::-ms-fill-lower {
 }
 
 
-/* ====== attribution footer =========== */
+/* ========== attribution footer =========== */
 
 .attribution { 
     font-size: 11px; 
@@ -577,74 +500,94 @@ input[type=range]::-ms-fill-lower {
 
 
 
-
+/* ======= media queies for screen width greater than 600px ========*/
 @media screen and (min-width: 37.5em) {
-    .pricing-card {
-        min-width: 50rem;
-        padding: 5rem;
-    }
 
-    .hero {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        
-        z-index: 5;
-        background-image: url('images/pattern-circles.svg');
-        background-repeat: no-repeat;
-        background-position: center 10%;
-        height: 100%;
-    
-    }
-    
     .hero__header {
         font-size: 2.5rem;
     }
     
     .hero__text {
         max-width: 100%;
-        
     }
 
-    .card__header--pageviews {
-        align-self: flex-start;
-        justify-self: center;
+    .card {
+        min-width: 50rem;
+        padding: 4rem 5rem;
     }
+
+    .card::after {
+        top: 22rem;
+    }
+
+    .form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "views rate"
+            "slider slider"
+            "bill bill"
+            "features features";
+    }
+
+    .card--pageviews {
+        grid-area: views;
+    }
+
 
     .price__display {
-        /* justify-self: center; */
-        display: flex;
-        align-items: center;
-        order: -1;
-        align-self: flex-end;
-    
+        grid-area: rate;
+        justify-content: end;
+    }
+
+    .price__display--amount {
+        font-size: 3.5rem;
+    }
+
+    .card__range--box {
+        grid-area: slider;
+    }
+
+    .billing {
+        grid-area: bill;
+        justify-self: center;
+        margin: 2rem 0;
     }
 
     .billing__timing.yearly::after {
         content:'-25% discount';
-
         right: -10rem;
         width: 8.5rem;
     }
 
+
     .features {
+        grid-area: features;
         width: 100%;
-        flex-direction: row;
+
+        margin-top: 4rem;
+
+        display: flex;
         justify-content: space-between;
-        
+        flex-direction: row;
     }
-
+    
+    
     .features__list {
-        margin: 2rem 2rem 0 0;
+        margin: 0;
+        list-style: none;
     }
-
+    
     .features__list--item {
-        /* justify-self: flex-start; */
+        position: relative;
+
         text-align: left;
+        font-size: 1.2rem;
     }
 
     .btn {
-        margin-top: none;
-    }   
+        padding: 1.5rem 4rem;
+    }
 
 }
