@@ -28,8 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/my-solution_mobile.png)
-![](./images/my-solution_desktop.png)
+![](./images/my-solution.png)
 
 ### Links
 
