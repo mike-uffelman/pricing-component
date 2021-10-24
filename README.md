@@ -46,15 +46,13 @@ Users should be able to:
 
 ### What I learned
 
-Going into this project, my main objective was to practice breaking down the provided project design and translating it into markup for the browser. All too often it's easy to simply jump in and start typing away, only to go back and fix later. For this project I intentionally slowed down and put in the time to think about the design and how to translate it to be displayed in the browser. In doing so I was able to keep a structured workflow and methodically work through problems.
+Going into this project, the main objective was to practice breaking down the provided project design and translating it into markup for the browser. All too often it's easy to simply jump in and start typing away, only to go back and fix later. For this project I intentionally slowed down and put in the time to think about the design and how to translate it to be displayed in the browser. In doing so I was able to keep a structured workflow and methodically work through problems.
 
-As I chose to not use a CSS preprocessor for this project, I found styling the range input elements to be particularly challenging. While the browser extension pseudo classes are not recommended for production code, perhaps attempting to style the range inputs without will be attempted later.
+As I chose to not use a CSS preprocessor or framework for this project, I found styling the range input elements to be particularly challenging, as I had not previously understood the current limitations. I did end up using the browser extension pseudo classes, which MDN states are not recommended for production code, thought perhaps later I'll attempt to style these differently later on.
 
 One such problem revolved around styling of the input ranges, as a self imposed challenge was to use vanilla CSS and no frameworks. This can be done
 
 An additional object for this project was to practice building responsive layouts using Flexbox and CSS Grid.
-
-### Continued development
 
 ## Author
 
