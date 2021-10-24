@@ -42,19 +42,15 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
 ### What I learned
 
 Going into this project, the main objective was to practice breaking down the provided project design and translating it into markup for the browser. All too often it's easy to simply jump in and start typing away, only to go back and fix later. For this project I intentionally slowed down and put in the time to think about the design and how to translate it to be displayed in the browser. In doing so I was able to keep a structured workflow and methodically work through problems.
 
-As I chose to not use a CSS preprocessor or framework for this project, I found styling the range input elements to be particularly challenging, as I had not previously understood the current limitations. I did end up using the browser extension pseudo classes, which MDN states are not recommended for production code, thought perhaps later I'll attempt to style these differently later on.
+As I chose to not use a CSS preprocessor or framework for this project, I found styling the range input elements to be particularly challenging, as I had not previously understood the current limitations. I did end up using the browser extension pseudo classes (i.e. -webkit-, -moz-, -ms-), which MDN states are not recommended for production code, though perhaps later I'll attempt to style these differently upon revisit.
 
-One such problem revolved around styling of the input ranges, as a self imposed challenge was to use vanilla CSS and no frameworks. This can be done
-
-An additional object for this project was to practice building responsive layouts using Flexbox and CSS Grid.
+An additional objective for this project was to practice building responsive layouts using Flexbox and CSS Grid.
 
 ## Author
 
-- Website - [Mike Uffelman](#)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Website - [Mike Uffelman](https://github.com/mike-uffelman)
+- Frontend Mentor - [@mike-uffelman](https://www.frontendmentor.io/profile/mike-uffelman)
