@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/my-solution.png)
+![](./images/my-solution2.png)
 
 ### Links
 
@@ -40,15 +40,20 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
+- JavaScript
 - Mobile-first workflow
 
 ### What I learned
 
-Going into this project, the main objective was to practice breaking down the provided project design and translating it into markup for the browser. All too often it's easy to simply jump in and start typing away, only to go back and fix later. For this project I intentionally slowed down and put in the time to think about the design and how to translate it to be displayed in the browser. In doing so I was able to keep a structured workflow and methodically work through problems.
+The main objective for this project was to practice breaking down the provided project design and translate it into markup for the browser. To accomplish this I intentionally slowed down and put in the time to think about the design and plan out build. In doing so I was able to keep a structured workflow and methodically work through problems.
 
 As I chose to not use a CSS preprocessor or framework for this project, I found styling the range input elements to be particularly challenging, as I had not previously understood the current limitations. I did end up using the browser extension pseudo classes (i.e. -webkit-, -moz-, -ms-), which MDN states are not recommended for production code, though perhaps later I'll attempt to style these differently upon revisit.
 
-An additional objective for this project was to practice building responsive layouts using Flexbox and CSS Grid.
+An additional objective for this project was to practice building responsive layouts using Flexbox and CSS Grid. Initially, I started with Flexbox only, but realized using CSS Grid will be useful for positioning the Pageviews and Price amounts on viewport change.
+
+The working functionality of the component was written with JavaScript. I followed an Object Oriented design approach, such that the component would be encapsulated and able to be exported.
+
+One minor styling change I added to the design was to toggle the billing timing label color depending on the switch box state, I think this improves the usability by readily displaying if you've selected monthly or yearly billing.
 
 ## Author
 

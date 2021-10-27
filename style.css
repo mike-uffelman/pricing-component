@@ -27,7 +27,7 @@ html {
 
     /* center the page for vw > max-width */
     max-width: 1440px;
-    margin: auto;
+    margin: 0 auto;
 } 
 
 
@@ -36,13 +36,14 @@ html {
 body {
     font-family: 'Manrope', sans-serif;
     color: var(--grayish-blue-text);
+    /* height: 100%; */
 
 }
 
 main {
     background-color: var(--very-pale-blue);
     
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     
     position: relative;
@@ -52,37 +53,39 @@ main {
     
     display: flex;
     flex-direction: column;    
+    overflow: hidden;
 }
 
 .bg-accent {
     position: absolute;
     z-index: 3;
-    top: -10%;
+    top: 0;
     left: 0;
     
     background-image: url('images/bg-pattern.svg');
     /* background-color: var(--light-grayish-blue-bg); */
     background-repeat: no-repeat;
-    /* background-position: center left; */
+    background-size: cover;
+    background-position: bottom left;
     
-    height: 100%;
+    height: 50%;
     width: 100%;
 }
 
 
-/* ------------- heto ------------- */
+/* ------------- hero ------------- */
 
 .hero {
     display: flex;
     flex-direction: column;
-    position: relative;
+    margin-top: 4rem;
 
     z-index: 5;
-    min-height: 50vh;
+    padding: 6rem 4rem 4rem 4rem;
 
     background-image: url('images/pattern-circles.svg');
     background-repeat: no-repeat;
-    background-position: center 25%;
+    background-position: center center;
 
 }
 
@@ -90,7 +93,8 @@ main {
     display: flex;
     flex-direction: column;
 
-    margin-top: 8rem;
+    /* padding-top: 4rem; */
+    /* padding-top: 6.5rem; */
 
     font-size: 2rem;
     text-align: center;
@@ -114,7 +118,6 @@ main {
 .card {
     position: relative;
     z-index: 10;
-    top: -25%;
 
     min-width: 32rem;
 
@@ -128,7 +131,7 @@ main {
     box-shadow: 0 0 3rem var(--light-grayish-blue-bg);
     border-radius: .5rem;
     padding: 3rem;
-    margin: 5rem;
+    margin: 3rem 5rem 5rem 5rem;
 }
 
 .form {
@@ -306,7 +309,7 @@ input[type=range]::-ms-fill-lower {
     left: 0;
     
     width: 100%;
-    height: 2px;
+    height: 1px;
     
     background-color: var(--light-grayish-blue-slider);
 }
@@ -420,7 +423,6 @@ input[type=range]::-ms-fill-lower {
 .selected {
     color: var(--strong-cyan);
     transition: all ease 300ms;
-    /* text-shadow: 0 0 1px var(--soft-cyan); */
 }
 
 /* discount pseudo element styling */
@@ -490,6 +492,12 @@ input[type=range]::-ms-fill-lower {
 
 /* ========== attribution footer =========== */
 
+.footer {
+    padding: 2rem 0;
+    background-color: var(--very-pale-blue);
+    margin-top: auto;
+}
+
 .attribution { 
     font-size: 11px; 
     text-align: center; 
@@ -502,6 +510,10 @@ input[type=range]::-ms-fill-lower {
 
 /* ======= media queies for screen width greater than 600px ========*/
 @media screen and (min-width: 37.5em) {
+
+    .hero {
+        padding: 4.5rem;
+    }
 
     .hero__header {
         font-size: 2.5rem;
